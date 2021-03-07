@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="5">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="apitests.GETTest"/>
+      <class name="apitests.POSTTest"/>
+      <class name="apitests.PUTTest"/>
+      <class name="apitests.DELETETest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test parallel="none" name="Test(failed)">
+    <classes>
+      <class name="apitests.DELETETest">
+        <methods>
+          <include name="param"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- apitests.DELETETest -->
+      <class name="apitests.POSTTest">
+        <methods>
+          <include name="param"/>
+          <include name="getResult"/>
+          <include name="testPOSTForRegistration"/>
+        </methods>
+      </class> <!-- apitests.POSTTest -->
+      <class name="apitests.PUTTest">
+        <methods>
+          <include name="param"/>
+          <include name="getResult"/>
+        </methods>
+      </class> <!-- apitests.PUTTest -->
+      <class name="apitests.GETTest">
+        <methods>
+          <include name="param"/>
+          <include name="getResult"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- apitests.GETTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
